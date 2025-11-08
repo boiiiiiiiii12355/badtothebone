@@ -1,6 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv8nwbkjelwxs"]
+[gd_scene load_steps=18 format=3 uid="uid://bv8nwbkjelwxs"]
 
-[ext_resource type="Script" path="res://main_ui.gd" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://c84j2l6qltqvu" path="res://main_ui.gd" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://dbj6aio335pam" path="res://fight (1).png" id="2_kbped"]
+[ext_resource type="Texture2D" uid="uid://cqnoi665c8v4s" path="res://ACT.png" id="3_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://cfcxokkahfh0p" path="res://ITEM.png" id="4_iy58a"]
+[ext_resource type="Texture2D" uid="uid://i58857k4jec8" path="res://MERCY.png" id="5_6a6wx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sky72"]
+atlas = ExtResource("2_kbped")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ytqx"]
+atlas = ExtResource("2_kbped")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ytqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sky72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ytqx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxugv"]
+atlas = ExtResource("3_fj5cn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh0v1"]
+atlas = ExtResource("3_fj5cn")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_am1vj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxugv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh0v1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am1vj"]
+atlas = ExtResource("4_iy58a")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g31lc"]
+atlas = ExtResource("4_iy58a")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xvdhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am1vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g31lc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knq72"]
+atlas = ExtResource("5_6a6wx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvdhi"]
+atlas = ExtResource("5_6a6wx")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi4e7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knq72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvdhi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,47 +103,47 @@ script = ExtResource("1_0fbet")
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
-offset_top = 1.0
+offset_left = 1.0
+offset_top = 67.0
+offset_right = 1154.0
+offset_bottom = 713.0
+
+[node name="FIGHT" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(165, 546)
+scale = Vector2(4.07813, 4)
+sprite_frames = SubResource("SpriteFrames_0ytqx")
+
+[node name="ACT" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(443, 547)
+scale = Vector2(4.52344, 4.02344)
+sprite_frames = SubResource("SpriteFrames_am1vj")
+
+[node name="ITEM" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(716, 547)
+scale = Vector2(4.35156, 4.07813)
+sprite_frames = SubResource("SpriteFrames_xvdhi")
+
+[node name="MERCY" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(968, 546)
+scale = Vector2(4.08984, 4.0625)
+sprite_frames = SubResource("SpriteFrames_pi4e7")
+
+[node name="status" type="Control" parent="."]
+anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 647.0
 
-[node name="FIGHT" type="Button" parent="Control"]
+[node name="ProgressBar" type="ProgressBar" parent="status"]
 layout_mode = 0
-offset_left = 57.0
-offset_top = 489.0
-offset_right = 221.0
-offset_bottom = 545.0
-theme_override_font_sizes/font_size = 30
-text = "FIGHT"
+offset_left = 498.0
+offset_top = 498.0
+offset_right = 525.0
+offset_bottom = 525.0
+show_percentage = false
 
-[node name="ACT" type="Button" parent="Control"]
+[node name="RichTextLabel" type="RichTextLabel" parent="status"]
 layout_mode = 0
-offset_left = 336.0
-offset_top = 488.0
-offset_right = 500.0
-offset_bottom = 545.0
-theme_override_font_sizes/font_size = 30
-text = "ACT"
-
-[node name="ITEM" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 610.0
-offset_top = 490.0
-offset_right = 774.0
-offset_bottom = 547.0
-theme_override_font_sizes/font_size = 30
-text = "ITEM"
-
-[node name="MERCY" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 876.0
-offset_top = 488.0
-offset_right = 1040.0
-offset_bottom = 545.0
-theme_override_font_sizes/font_size = 30
-text = "MERCY"
-
-[connection signal="pressed" from="Control/FIGHT" to="." method="_on_fight_pressed"]
-[connection signal="pressed" from="Control/ACT" to="." method="_on_act_pressed"]
-[connection signal="pressed" from="Control/ITEM" to="." method="_on_item_pressed"]
-[connection signal="pressed" from="Control/MERCY" to="." method="_on_mercy_pressed"]
+offset_left = 539.0
+offset_top = 493.0
+offset_right = 579.0
+offset_bottom = 533.0
