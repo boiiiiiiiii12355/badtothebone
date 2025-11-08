@@ -59,3 +59,10 @@ position = Vector2(542, 232)
 sprite_frames = SubResource("SpriteFrames_q6r6c")
 animation = &"red"
 frame_progress = 0.894478
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 397.0
+offset_top = 453.0
+offset_right = 674.0
+offset_bottom = 480.0
+value = 99.0
