@@ -14,7 +14,7 @@ var hpbar
 func hp_mang():
 	hp_bar.value = hp
 	
+@export var hit_timer : Timer
 func hit(amount : int):
 	hp -= amount
 	
-
