@@ -1,13 +1,22 @@
 extends Control
 
-var button_pressed = false
-
+var button_state : int
 func _process(delta):
-		if Input.is_action_just_pressed("fight"):
-			print("fight")
-		if Input.is_action_just_pressed("act"):
-			print("act")
-		if Input.is_action_just_pressed("item"):
-			print("item")
-		if Input.is_action_just_pressed("mercy"):
-			print("mercy")
+		pass
+
+# 1 = fight
+# 2 = act
+# 3 = item
+# 4 = mercy
+func _input(event: InputEvent) -> void:
+	button_check()
+	if Input.is_action_just_pressed("left"):
+		if button_state <= 4:
+			button_state += 1
+	elif Input.is_action_just_pressed("right"):
+		if button_state >= 1:
+			button_state -= 1
+
+func button_check():
+	if button_state == 1:
+		print("fight")
