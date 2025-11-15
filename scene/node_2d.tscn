@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cn4vrq2sxvhw2"]
+[gd_scene load_steps=7 format=3 uid="uid://lk0iojuedfmq"]
 
-[ext_resource type="Script" uid="uid://c75pquxah8bsy" path="res://movement.gd" id="1_djg68"]
-[ext_resource type="Texture2D" uid="uid://dql7aiwjf41p0" path="res://Drawing_2.png" id="2_0e48y"]
-[ext_resource type="PackedScene" uid="uid://bv8nwbkjelwxs" path="res://control.tscn" id="3_epypp"]
+[ext_resource type="Script" path="res://movement.gd" id="1_djg68"]
+[ext_resource type="Texture2D" path="res://Drawing_2.png" id="2_0e48y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnqxo"]
 radius = 10.198
@@ -48,19 +47,22 @@ color = Color(0, 0, 0, 1)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(133, -13, 133, 514, 1024, 516, 1010, -18, 143, -14, 329, 67, 758, 66, 760, 410, 325, 411, 325, 73)
 
-[node name="movement" type="CharacterBody2D" parent="." node_paths=PackedStringArray("hp_bar")]
+[node name="player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("hp_bar", "hit_timer")]
 script = ExtResource("1_djg68")
 hp_bar = NodePath("../ProgressBar")
+hit_timer = NodePath("Timer")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="movement"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(542, 226)
 shape = SubResource("CircleShape2D_lnqxo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="movement"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 position = Vector2(542, 232)
 sprite_frames = SubResource("SpriteFrames_q6r6c")
 animation = &"red"
 frame_progress = 0.894478
+
+[node name="Timer" type="Timer" parent="player"]
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 397.0
@@ -68,5 +70,3 @@ offset_top = 453.0
 offset_right = 674.0
 offset_bottom = 480.0
 value = 99.0
-
-[node name="Control" parent="." instance=ExtResource("3_epypp")]
