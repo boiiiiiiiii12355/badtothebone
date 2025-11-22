@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-@export var speed = 1000
+
 var hp = 100
 
 func _physics_process(delta):
 	var dir = Input.get_vector("left", "right", "up", "down")
+	var speed = 1000
 	velocity = dir * speed
 	move_and_slide()
 
