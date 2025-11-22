@@ -45,7 +45,6 @@ polygon = PackedVector2Array(176, 28, 619, 23, 618, 370, 169, 366, 174, 38, 196,
 
 [node name="PLAYER" type="CharacterBody2D" parent="."]
 script = ExtResource("1_guiot")
-speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PLAYER"]
 position = Vector2(381, 192)
