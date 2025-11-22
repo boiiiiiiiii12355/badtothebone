@@ -20,3 +20,9 @@ func _input(event: InputEvent) -> void:
 func button_check():
 	if button_state == 1:
 		print("fight")
+	if button_state == 2:
+		print("act")
+	if button_state == 3:
+		print("item")
+	if button_state == 4:
+		print("mercy")
