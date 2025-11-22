@@ -16,6 +16,11 @@ region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cegan"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yaehf")
@@ -94,12 +99,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Button" type="Control"]
+[node name="Button" type="Control" node_paths=PackedStringArray("fightbutton")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 647.0
 script = ExtResource("1_0ha60")
+fightbutton = NodePath("FIGHT")
 
 [node name="FIGHT" type="AnimatedSprite2D" parent="."]
 position = Vector2(161, 611)

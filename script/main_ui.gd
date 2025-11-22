@@ -17,8 +17,10 @@ func _input(event: InputEvent) -> void:
 		if button_state >= 1:
 			button_state -= 1
 
+@export var fightbutton : AnimatedSprite2D
 func button_check():
 	if button_state == 1:
+		fightbutton.animation = "active"
 		print("fight")
 	if button_state == 2:
 		print("act")
