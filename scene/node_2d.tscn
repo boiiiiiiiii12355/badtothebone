@@ -45,6 +45,7 @@ polygon = PackedVector2Array(176, 28, 619, 23, 618, 370, 169, 366, 174, 38, 196,
 
 [node name="PLAYER" type="CharacterBody2D" parent="."]
 script = ExtResource("1_guiot")
+speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PLAYER"]
 position = Vector2(381, 192)
@@ -61,6 +62,6 @@ offset_top = 410.0
 offset_right = 593.0
 offset_bottom = 437.0
 min_value = 99.0
-value = 99.03
+value = 99.99
 
 [node name="Timer" type="Timer" parent="."]
