@@ -33,33 +33,33 @@ animations = [{
 position = Vector2(0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = 189.0
-offset_top = 30.0
-offset_right = 580.0
-offset_bottom = 337.0
+offset_left = 368.0
+offset_top = 98.0
+offset_right = 759.0
+offset_bottom = 405.0
 color = Color(0, 0, 0, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-9, -16)
-polygon = PackedVector2Array(176, 28, 619, 23, 618, 370, 169, 366, 174, 38, 196, 47, 199, 351, 589, 353, 590, 47, 203, 48)
+polygon = PackedVector2Array(358, 94, 801, 89, 800, 436, 351, 432, 352.13422, 357.5938, 356, 104, 378, 113, 381, 417, 771, 419, 772, 113, 385, 114)
 
 [node name="PLAYER" type="CharacterBody2D" parent="."]
 script = ExtResource("1_guiot")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PLAYER"]
-position = Vector2(381, 192)
+position = Vector2(560, 260)
 sprite_frames = SubResource("SpriteFrames_0hol4")
 frame_progress = 0.7583947
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PLAYER"]
-position = Vector2(381, 186)
+position = Vector2(560, 254)
 shape = SubResource("CircleShape2D_0e48y")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 187.0
-offset_top = 410.0
-offset_right = 593.0
-offset_bottom = 437.0
+offset_left = 366.0
+offset_top = 478.0
+offset_right = 772.0
+offset_bottom = 505.0
 min_value = 99.0
 value = 99.99
 
