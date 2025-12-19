@@ -134,7 +134,6 @@ sprite_frames = SubResource("SpriteFrames_cegan")
 position = Vector2(436, 610)
 scale = Vector2(3.54297, 3.49609)
 sprite_frames = SubResource("SpriteFrames_7mycd")
-animation = &"active"
 
 [node name="ITEM" type="AnimatedSprite2D" parent="."]
 position = Vector2(698, 609)
