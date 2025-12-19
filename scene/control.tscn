@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhqarm22qwykv"]
 
-[ext_resource type="Script" uid="uid://dfdg5fudknyaj" path="res://script/text.gd" id="1_mnow5"]
+[ext_resource type="Script" uid="uid://bt0l7sn0ojdtl" path="res://script/textbox.gd" id="1_mnow5"]
 [ext_resource type="FontFile" uid="uid://c7an4uxy6lxp5" path="res://script/Born2bSportyV2 (1).ttf" id="2_f676y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
